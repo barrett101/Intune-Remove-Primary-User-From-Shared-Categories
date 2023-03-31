@@ -3,6 +3,7 @@
 This script was created to remove primary users from devices in Intune that are considered shared.  It requires that your shared devices be organized in specific device categories within Intune.  
 
 **Reason for Creating Script**
+
 The reason for creating this script is I found there was no great way to enroll Shared Hybrid Azure Joined windows devices into Intune automatically.  If you use the Group Policy setting "Enable Automatic MDM enrollment using default Azure AD credential" with "User Credential" option it will automatically enroll the device, but will assign the current logged in user (confirmed) or the next (I believe).  Once the group policy enrolls the device and the device is in the correct shared device category as defined in the CSV you can run this script to remove the primary user from the device(s).
 
 
