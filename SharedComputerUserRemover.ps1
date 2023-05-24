@@ -32,7 +32,7 @@ Connect-Mggraph -Scopes "DeviceManagementManagedDevices.ReadWrite.All"
 #Retrieving Shared Categories List from CSV
 $SharedDeviceCategories = Import-Csv -Path $SharedDeviceCategoriesPath
 #Retrieving Windows Devices Only from Intune
-$listIntuneDevices = Get-MgDeviceManagementManagedDevice | Where-Object { ($_.OperatingSystem -match "Windows") }
+$listIntuneDevices = Get-MgDeviceManagementManagedDevice -All | Where-Object { ($_.OperatingSystem -match "Windows") }
 
 #Goes through each of the Intune devices
 foreach ($d in $listIntuneDevices)
